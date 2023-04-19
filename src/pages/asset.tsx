@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react"
 import axios from "axios";
+import { DataTable } from 'primereact/datatable';
+import { Column } from 'primereact/column';
 
 
 const AssetPage = () => {
 
-    const [asset, setAsset] = useState()
+    const [assets, setAsset] = useState('')
 
     const getAsset = () => {
         // console.log(localStorage.getItem('token'))
@@ -14,8 +16,9 @@ const AssetPage = () => {
             }
         })
         .then((res) => {
-            setAsset(res.data.records)
-            console.log(res.data.records);   
+            const result = res.data.records
+            setAsset(result)
+            console.log(result);   
         })
     }
 
@@ -27,7 +30,13 @@ const AssetPage = () => {
 
     return (
         <>
-
+            {assets.length > 0 && (
+            <ul>
+                {assets.map(a => (
+                    <li key={a.id}>{a.Name}</li>
+                ))}
+            </ul>
+            )}
         </>
     )
 }
