@@ -7,15 +7,15 @@ const AssetPage = () => {
     const [asset, setAsset] = useState()
 
     const getAsset = () => {
-        axios.get(`https://demo.globalqss.com/api/v1/models/a_asset`,{
+        // console.log(localStorage.getItem('token'))
+        axios.get(`/api/v1/models/a_asset`,{
             headers : {
-                'Authorization' : `Bearer${localStorage.getItem('token')}`
+                Authorization : `Bearer ${localStorage.getItem('auth')}`
             }
         })
         .then((res) => {
-            const result = res.data.records
-            setAsset(result)
-            console.log(result);   
+            setAsset(res.data.records)
+            console.log(res.data.records);   
         })
     }
 
@@ -25,7 +25,11 @@ const AssetPage = () => {
 
     
 
-    return <h1>aset page</h1>
+    return (
+        <>
+
+        </>
+    )
 }
 
 export default AssetPage
