@@ -2,7 +2,6 @@ import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import { useFormik } from 'formik';
 import { Toast } from 'primereact/toast';
-import { classNames } from 'primereact/utils';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useRef } from 'react';
@@ -24,7 +23,7 @@ const LoginPage = () => {
                 clientId:'11' ,
                 roleId: '102',
                 organizationId:'11' ,
-                warehouseId:'103' ,
+                warehouseId:'' ,
                 language: 'en_US'
             }
         },

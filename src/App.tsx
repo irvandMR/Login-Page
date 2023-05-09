@@ -8,7 +8,7 @@ import { Toast } from 'primereact/toast';
 import { classNames } from 'primereact/utils';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import assetPage from "./pages/asset";
+import assetPage from "./pages/a_asset/AssetList";
 
 
 function App() {
